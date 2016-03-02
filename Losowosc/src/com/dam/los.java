@@ -16,7 +16,7 @@ public class los {
     public static void main(String[] args) {
         
         /*
-        * zainicjalizowanie tabeli OXY 
+        * zainicjalizowanie tabeli OXY  s
         */
         Generator generator = new Generator(MOD);
         

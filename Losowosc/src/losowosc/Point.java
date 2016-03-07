@@ -14,12 +14,13 @@ import javax.swing.Timer;
 public class Point extends JFrame {
 
     public Point() {
+
         initUI();
     }
 
     private void initUI() {
 
-        final los surface = new los();
+        final Los surface = new Los();
         add(surface);
 
         addWindowListener(new WindowAdapter() {
@@ -30,8 +31,8 @@ public class Point extends JFrame {
             }
         });
 
-        setTitle("Generator liczb losowych");
-        setSize(700, 480);
+        setTitle("Points");
+        setSize(350, 250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -43,7 +44,7 @@ public class Point extends JFrame {
             public void run() {
 
                 Point ex = new Point();
-                  ex.setVisible(true);
+                ex.setVisible(true);
             }
         });
     }

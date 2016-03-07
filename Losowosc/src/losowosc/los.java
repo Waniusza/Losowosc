@@ -7,6 +7,7 @@ package losowosc;
 
 
 
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,6 +16,8 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+
 
 class los extends JPanel implements ActionListener {
     
@@ -48,14 +51,15 @@ class los extends JPanel implements ActionListener {
         Graphics2D g2d = (Graphics2D) g;
 
         g2d.setPaint(Color.red);
+        
+        Random r = new Random();
+        
+        int w = getWidth(); //width
+        int h = getHeight(); //height
+        
         for (int i=0 ; i<1000 ; i++) {
             long[] coordinates = generator.getCoordinates();
-            
-            int w = getWidth(); //width
-            int h = getHeight(); //height
-            
-            Random r = new Random();
-            
+        
         
             float x = (float) coordinates[0] / MOD;
             float y = (float) coordinates[1] / MOD;
@@ -64,18 +68,19 @@ class los extends JPanel implements ActionListener {
             statsY[(int)(y*10)]++;
             System.out.println("Wygenerowa�em punkt : (" + x + " | " + y + ")");
             
-            int xx = Math.round(x) % w;
-            int yy = Math.round(y) % h;
-            g2d.drawLine(xx, yy, xx, yy);
+            
+            
+            g2d.drawLine((int)Math.abs(x*1000), (int)Math.abs(y*1000), (int)Math.abs(x*1000), (int)Math.abs(y*1000));
            
         //RYSOWANIE
-        /* for (int j = 0; j < 1000; j++) {
+       /* for (int j = 0; j < 1000; j++) {
 
-            int xx = Math.round(x) % w;
-            int yy = Math.round(y) % h;
-            g2d.drawLine(xx, yy, xx, yy);
+            int a = Math.abs(r.nextInt()) % w;
+            int b = Math.abs(r.nextInt()) % h;
+            g2d.drawLine(a, b, a, b);
         }
         */
+        
 
         
     }
@@ -92,9 +97,7 @@ class los extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      
+      repaint();
     }
-    
-    
 }
 

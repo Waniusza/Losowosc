@@ -51,8 +51,8 @@ class los extends JPanel implements ActionListener {
         for (int i=0 ; i<1000 ; i++) {
             long[] coordinates = generator.getCoordinates();
             
-            int w = 500; //width
-            int h = 500; //height
+            int w = getWidth(); //width
+            int h = getHeight(); //height
             
             Random r = new Random();
             

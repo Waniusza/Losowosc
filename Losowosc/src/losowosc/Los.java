@@ -58,11 +58,11 @@ class Los extends JPanel implements ActionListener {
 
         
         
-        for (int i=0 ; i<3000 ; i++) {
+        for (int i=0 ; i<10 ; i++) {
             long[] coordinates = generator.getCoordinates();
                     
-            float x = (float) coordinates[0] / MOD % w;
-            float y = (float) coordinates[1] / MOD % h;
+            float x = (float) coordinates[0] / MOD;
+            float y = (float) coordinates[1] / MOD;
              
             statsX[(int)(x*10)]++;
             statsY[(int)(y*10)]++;
@@ -70,7 +70,7 @@ class Los extends JPanel implements ActionListener {
           /*
           * wype�nienie punktu (x|y) kolorem
            */
-            g2d.drawLine((int)Math.abs(x*1000), (int)Math.abs(y*1000), (int)Math.abs(x*1000), (int)Math.abs(y*1000));
+            g2d.drawLine((int)Math.abs(x*100), (int)Math.abs(y*100), (int)Math.abs(x*100), (int)Math.abs(y*100));
         
             
         }

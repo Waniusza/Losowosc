@@ -5,8 +5,6 @@
  */
 package losowosc;
 
-
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -16,16 +14,16 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-
-
 class Los extends JPanel implements ActionListener {
 
-    private final int DELAY = 150;
+    private final int DELAY = 550;
     private Timer timer;
-    private static long MOD = (Long.MAX_VALUE/2);
+    private static long MOD = Long.MAX_VALUE;
+    private Generator generator;
+    
+    public Los(int a, int b, int n) {
+        generator = new Generator(a, b, n, MOD);
         
-    public Los() {
-
         initTimer();
     }
 
@@ -34,9 +32,8 @@ class Los extends JPanel implements ActionListener {
         timer = new Timer(DELAY, this);
         timer.start();
     }
-    
+
     public Timer getTimer() {
-        
         return timer;
     }
 
@@ -46,35 +43,29 @@ class Los extends JPanel implements ActionListener {
 
         g2d.setPaint(Color.blue);
         g2d.setStroke(new BasicStroke(2));
-        
-        
-        Generator generator = new Generator(MOD);
-        
+
+
         int[] statsX = new int[10];
         int[] statsY = new int[10];
-        
+
         int w = getWidth();
         int h = getHeight();
 
-        
-        
-        for (int i=0 ; i<10 ; i++) {
+        for (int i = 0; i < 250; i++) {
             long[] coordinates = generator.getCoordinates();
-                    
-            float x = (float) coordinates[0] / MOD;
-            float y = (float) coordinates[1] / MOD;
-             
-            statsX[(int)(x*10)]++;
-            statsY[(int)(y*10)]++;
+
+            double x = (float) coordinates[0] / MOD;
+            double y = (float) coordinates[1] / MOD;
+
+            statsX[(int) (x * 10)]++;
+            statsY[(int) (y * 10)]++;
             System.out.println("Wygenerowalem punkt : (" + x + " | " + y + ")");
-          /*
-          * wype�nienie punktu (x|y) kolorem
-           */
-            g2d.drawLine((int)Math.abs(x*100), (int)Math.abs(y*100), (int)Math.abs(x*100), (int)Math.abs(y*100));
-        
-            
+            /*
+             * wypełnienie punktu (x|y) kolorem
+             */
+            g2d.drawLine((int) Math.abs(x * 100), (int) Math.abs(y * 100), (int) Math.abs(x * 100), (int) Math.abs(y * 100));
         }
-        
+
     }
 
     @Override
@@ -86,8 +77,7 @@ class Los extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      //repaint();
+        //repaint();
     }
 
-    
 }

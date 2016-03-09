@@ -1,17 +1,20 @@
 package losowosc;
 
+import java.math.BigDecimal;
+
 public class Generator {
 
     private static long mod;
     private static long value;
     private int a, b, n;
-    
+
     public Generator(int a, int b, int n, long mod) {
         this.mod = mod;
         this.a = a;
         this.b = b;
         this.n = n;
-        value = System.currentTimeMillis() * System.currentTimeMillis();
+        value = (long) (Math.pow(System.currentTimeMillis(), 2) % mod);
+        System.out.println("Inicjalizacja generatora : " + value);
     }
 
     public long[] getCoordinates() {
@@ -22,7 +25,10 @@ public class Generator {
     }
 
     private long countValue() {
-        value = (long)(((((double) a) * value + b + 346675) * n) % mod);
+        double tmp = a * value + b;
+        System.out.println("Mam  tmp : " + tmp);
+        value = (long) tmp % mod;
+        System.out.println("Wylosowalem: " + value);
         if (value > 0) {
             return value;
         } else {

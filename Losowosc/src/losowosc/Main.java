@@ -175,6 +175,7 @@ public class Main extends javax.swing.JFrame {
             Integer a = Integer.parseInt(textField1.getText());
             Integer b = Integer.parseInt(textField2.getText());
             Integer n = Integer.parseInt(textField3.getText());
+            
             Point newWindow = new Point(a, b, n);
             newWindow.setVisible(true);
             this.setVisible(false);

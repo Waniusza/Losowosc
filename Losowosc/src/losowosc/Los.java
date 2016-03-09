@@ -11,6 +11,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -63,8 +64,13 @@ class Los extends JPanel implements ActionListener {
             /*
              * wypełnienie punktu (x|y) kolorem
              */
-            g2d.drawLine((int) Math.abs(x * 100), (int) Math.abs(y * 100), (int) Math.abs(x * 100), (int) Math.abs(y * 100));
+            int XX = (int) Math.abs(x * 250);
+            int YY = (int) Math.abs(y * 250);
+            g2d.drawLine(XX, YY, XX, YY);
         }
+        
+        System.out.println("Statystyka podpowiada, że na OX był następujący rozkład: " + Arrays.toString(statsX));
+        System.out.println("Statystyka podpowiada, że na OY był następujący rozkład: " + Arrays.toString(statsY));
 
     }
 

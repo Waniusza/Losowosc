@@ -20,10 +20,10 @@ class Los extends JPanel implements ActionListener {
     private final int DELAY = 550;
     private Timer timer;
     private static long MOD = Long.MAX_VALUE;
-    private Generator generator;
+    private GeneratorRownomierny generator;
     
     public Los(int a, int b, int n) {
-        generator = new Generator(a, b, n, MOD);
+        generator = new GeneratorRownomierny(a, b, n, MOD);
         
         initTimer();
     }

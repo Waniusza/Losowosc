@@ -4,7 +4,7 @@ package losowosc;
  *
  * @author student
  */
-public abstract class Generator {
+public class Generator {
 
     protected static long mod;
     protected static long value;
@@ -15,17 +15,26 @@ public abstract class Generator {
         this.a = a;
         this.b = b;
         this.n = n;
-        value = (long) (Math.pow(System.currentTimeMillis(), 2) % mod);
+        value = Integer.MAX_VALUE;
         System.out.println("Inicjalizacja generatora : " + value);
     }
-    
+
     public long[] getCoordinates() {
         long[] res = new long[2];
         res[0] = countValue();
         res[1] = countValue();
         return res;
     }
-    
-    protected abstract long countValue();
 
+    protected long countValue() {
+        double tmp = a * value + b;
+        System.out.println("Mam  tmp : " + tmp);
+        value = (long) tmp % mod;
+        System.out.println("Wylosowalem: " + value);
+        if (value > 0) {
+            return value;
+        } else {
+            return -value;
+        }
+    }
 }

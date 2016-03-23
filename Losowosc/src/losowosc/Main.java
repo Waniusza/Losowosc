@@ -46,7 +46,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 0, 51));
 
         textField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textField1.setText(" a");
+        textField1.setText("12425");
         textField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 removeText(evt);
@@ -64,7 +64,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         textField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textField2.setText(" b");
+        textField2.setText("536462352");
         textField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 removeText(evt);
@@ -82,7 +82,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         textField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textField3.setText(" n");
+        textField3.setText("51135");
         textField3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 removeText(evt);
@@ -127,13 +127,12 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4))
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(textField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                                .addComponent(textField1, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(textField1)
+                            .addComponent(textField3))))
+                .addContainerGap(64, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,7 +161,6 @@ public class Main extends javax.swing.JFrame {
         );
 
         textField1.getAccessibleContext().setAccessibleName("");
-        jLabel2.getAccessibleContext().setAccessibleName("Wprowadz wartosc a:");
 
         getContentPane().add(jPanel1);
 
@@ -198,20 +196,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_textField3ActionPerformed
 
     private void textField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textField1MouseClicked
-        ((javax.swing.JTextField) evt.getComponent()).setText("");
+
     }//GEN-LAST:event_textField1MouseClicked
 
     private void textField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textField2MouseClicked
-        ((javax.swing.JTextField) evt.getComponent()).setText("");
+
     }//GEN-LAST:event_textField2MouseClicked
 
     private void textField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textField3MouseClicked
-        ((javax.swing.JTextField) evt.getComponent()).setText("");
+
     }//GEN-LAST:event_textField3MouseClicked
 
     private void removeText(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_removeText
-        
-        ((javax.swing.JTextField) evt.getComponent()).setText("");
+
     }//GEN-LAST:event_removeText
 
     /**

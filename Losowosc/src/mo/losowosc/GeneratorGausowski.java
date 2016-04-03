@@ -1,4 +1,4 @@
-package losowosc;
+package mo.losowosc;
 
 public class GeneratorGausowski extends Generator {
 

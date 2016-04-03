@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package losowosc;
+package mo.losowosc;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -23,7 +23,7 @@ public class Point extends JFrame {
 
     private void initUI() {
 
-        final Los surface = new Los(a, b, n);
+        final Los surface = new Los(a, b, n, 1);
         add(surface);
 
         addWindowListener(new WindowAdapter() {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package losowosc;
+package mo.losowosc;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -21,12 +21,22 @@ class Los extends JPanel implements ActionListener {
     private Timer timer;
     private static long MOD = Long.MAX_VALUE;
     private Generator generator;
-    
-    public Los(int a, int b, int n) {
-//        generator = new Generator(a, b, n, MOD);
-//        generator = new GeneratorGausowski(a, b, n, MOD);
-        generator = new GeneratorLevyego(a, b, n, MOD);
-        
+
+    public Los(int a, int b, int n, int generatorNumber) {
+        switch (generatorNumber) {
+            case 1:
+                generator = new Generator(a, b, n, MOD);
+                break;
+            case 2:
+                generator = new GeneratorGausowski(a, b, n, MOD);
+                break;
+            case 3:
+                generator = new GeneratorLevyego(a, b, n, MOD);
+                break;
+            default:
+                System.out.println("Nie ma takiego generatora!");
+        }
+
         initTimer();
     }
 
@@ -46,7 +56,6 @@ class Los extends JPanel implements ActionListener {
 
         g2d.setPaint(Color.blue);
         g2d.setStroke(new BasicStroke(2));
-
 
         int[] statsX = new int[10];
         int[] statsY = new int[10];
@@ -70,7 +79,7 @@ class Los extends JPanel implements ActionListener {
             int YY = (int) Math.abs(y * 250);
             g2d.drawLine(XX, YY, XX, YY);
         }
-        
+
         System.out.println("Statystyka podpowiada, że na OX był następujący rozkład: " + Arrays.toString(statsX));
         System.out.println("Statystyka podpowiada, że na OY był następujący rozkład: " + Arrays.toString(statsY));
 

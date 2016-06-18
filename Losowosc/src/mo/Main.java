@@ -5,6 +5,11 @@
  */
 package mo;
 
+import boids.BoidApplet;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Krzysztof
@@ -59,7 +64,12 @@ public class Main extends WindowOpt {
             }
         });
 
-        jButton4.setText("jButton4");
+        jButton4.setText("Algorytm Świetlików");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton5");
 
@@ -134,6 +144,21 @@ public class Main extends WindowOpt {
         newWindow.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        BoidApplet boid =new BoidApplet();
+        JFrame myFrame=new JFrame("Algorytm Świetlików");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
+        myFrame.setLocation((int) width/3-getWidth()/2,(int) height/3-getHeight()/2);
+        myFrame.add(boid);
+        myFrame.pack();
+        myFrame.setSize(500,500);
+        myFrame.setVisible(true);
+        boid.init();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,7 +185,7 @@ public class Main extends WindowOpt {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

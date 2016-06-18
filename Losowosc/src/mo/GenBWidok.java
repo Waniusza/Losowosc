@@ -19,7 +19,7 @@ public class GenBWidok extends javax.swing.JFrame {
     public GenBWidok() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Generator liczb pseudolosowych");
+        setTitle("Generator Gausowski");
     }
 
     /**

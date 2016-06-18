@@ -19,7 +19,7 @@ public class GenCWidok extends javax.swing.JFrame {
     public GenCWidok() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Generator liczb pseudolosowych");
+        setTitle("Generator Levy'ego");
     }
 
     /**

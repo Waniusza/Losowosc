@@ -24,13 +24,13 @@ class Los extends JPanel implements ActionListener {
 
     public Los(int a, int b, int n, int generatorNumber) {
         switch (generatorNumber) {
-            case 1:
+            case 1: // generator pseudolosyw
                 generator = new Generator(a, b, n, MOD);
                 break;
-            case 2:
+            case 2: // gausowski
                 generator = new GeneratorGausowski(a, b, n, MOD);
                 break;
-            case 3:
+            case 3: // levyego
                 generator = new GeneratorLevyego(a, b, n, MOD);
                 break;
             default:

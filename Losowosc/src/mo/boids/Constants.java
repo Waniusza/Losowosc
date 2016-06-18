@@ -1,6 +1,6 @@
 
 
-package boids;
+package mo.boids;
 
 
 public class Constants {

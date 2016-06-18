@@ -1,4 +1,4 @@
-package boids;
+package mo.boids;
 
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;

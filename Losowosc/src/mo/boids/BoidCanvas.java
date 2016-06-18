@@ -1,6 +1,6 @@
 
 
-package boids;
+package mo.boids;
 
 import java.awt.Color;
 import java.awt.Graphics;

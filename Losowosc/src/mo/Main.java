@@ -5,10 +5,11 @@
  */
 package mo;
 
-import boids.BoidApplet;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import mo.boids.BoidApplet;
+import mo.trans.widok.MiastaWidok;
 
 /**
  *
@@ -71,7 +72,12 @@ public class Main extends WindowOpt {
             }
         });
 
-        jButton5.setText("jButton5");
+        jButton5.setText("Problem komiwojadżera");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,7 +94,7 @@ public class Main extends WindowOpt {
                         .addGap(116, 116, 116)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -146,18 +152,24 @@ public class Main extends WindowOpt {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-        BoidApplet boid =new BoidApplet();
-        JFrame myFrame=new JFrame("Algorytm Świetlików");
+        BoidApplet boid = new BoidApplet();
+        JFrame myFrame = new JFrame("Algorytm Świetlików");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
-        myFrame.setLocation((int) width/3-getWidth()/2,(int) height/3-getHeight()/2);
+        myFrame.setLocation((int) width / 3 - getWidth() / 2, (int) height / 3 - getHeight() / 2);
         myFrame.add(boid);
         myFrame.pack();
-        myFrame.setSize(500,500);
+        myFrame.setSize(500, 500);
         myFrame.setVisible(true);
         boid.init();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        MiastaWidok newWindow = new MiastaWidok();
+        newWindow.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +197,7 @@ public class Main extends WindowOpt {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-       
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

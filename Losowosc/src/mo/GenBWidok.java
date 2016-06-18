@@ -172,9 +172,9 @@ public class GenBWidok extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            Integer a = Integer.parseInt(textField1.getText());
-            Integer b = Integer.parseInt(textField2.getText());
-            Integer n = Integer.parseInt(textField3.getText());
+             Long a = Long.parseLong(textField1.getText());
+            Long b = Long.parseLong(textField2.getText());
+            Long n = Long.parseLong(textField3.getText());
             
             Point newWindow = new Point(a, b, n, 2);
             newWindow.setVisible(true);

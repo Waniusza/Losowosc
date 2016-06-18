@@ -1,35 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mo.losowosc;
 
 /**
  *
- * @author student
+ * @author Janusz Sokołow, Student of Gdańsk University of Technology
  */
 public class Generator {
 
-    protected static long mod;
-    protected static long value;
-    protected int a, b, n;
+    static float mod = Float.MAX_VALUE;
+    protected static float value;
+    long a, b, n;
 
-    public Generator(int a, int b, int n, long mod) {
-        this.mod = mod;
+    public Generator(long a, long b, long n, long mod) {
         this.a = a;
         this.b = b;
         this.n = n;
-        value = Integer.MAX_VALUE;
-        System.out.println("Inicjalizacja generatora : " + value);
+        value = 0.123215f;
     }
 
-    public long[] getCoordinates() {
-        long[] res = new long[2];
+    public float[] getCoordinates() {
+        float[] res = new float[2];
         res[0] = countValue();
         res[1] = countValue();
         return res;
     }
 
-    protected long countValue() {
-        double tmp = a * value + b;
-        System.out.println("Mam  tmp : " + tmp);
-        value = (long) tmp % mod;
+    protected float countValue() {
+        System.out.println("Generuję na podstawie " + value);
+        double tmp = value * mod;
+        if (tmp > Float.MAX_VALUE) {
+            tmp %= Float.MAX_VALUE;
+        }
+        tmp = tmp * a + b;
+
+        System.out.println("Mam  tmp : " + tmp + " i dziele przez " + mod);
+        value = (float) ((tmp % mod) / mod);
         System.out.println("Wylosowalem: " + value);
         if (value > 0) {
             return value;

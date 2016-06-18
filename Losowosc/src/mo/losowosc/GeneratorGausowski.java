@@ -2,24 +2,22 @@ package mo.losowosc;
 
 public class GeneratorGausowski extends Generator {
 
-    public GeneratorGausowski(int a, int b, int n, long mod) {
+    public GeneratorGausowski(long a, long b, long n, long mod) {
         super(a, b, n, mod);
     }
 
-    @Override
-    public long countValue() {
-        
+    public float countValue() {
         boolean ok = false;
-        double limit = Math.sqrt(2/2.718281828);
+        double limit = Math.sqrt(2 / 2.718281828);
         double X;
 
         do {
             // generuj U o rozkładzie równomiernym U(0,1) 
-            double U = countValue();
+            double U = super.countValue();
 
-        // generuj V o rozkładzie równomiernym
+            // generuj V o rozkładzie równomiernym
             // U(-sqrt(2/e),sqrt(2/e))
-            double V = 2 * limit * countValue() - limit;
+            double V = 2 * limit * super.countValue() - limit;
             X = V / U;
 
             if (X * X <= 2 * (3 - U * (4 + U))) {
@@ -35,7 +33,9 @@ public class GeneratorGausowski extends Generator {
             }
         } while (!ok);
 
-        return (long) (X % Long.MAX_VALUE);
-        
+        System.out.println("Gauss otrzymał : " + X + " i dzieli przez " + mod);
+
+        return (float) Math.abs(X / 2);
+
     }
 }

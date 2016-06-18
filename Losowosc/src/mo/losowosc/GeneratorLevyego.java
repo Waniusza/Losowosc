@@ -2,31 +2,26 @@ package mo.losowosc;
 
 public class GeneratorLevyego extends Generator {
 
-    public GeneratorLevyego(int a, int b, int n, long mod) {
+    public GeneratorLevyego(long a, long b, long n, long mod) {
         super(a, b, n, mod);
     }
 
-    protected double countGauseValue() {
+    @Override
+    public float countValue() {
 
         // generuj X o rozkładzie równomiernym U(-1,1)
-        double X = countValue() * 2 - 1;
+        double X = super.countValue() * 2 - 1;
 
         // generuj X o rozkładzie równomiernym U(0,1)
-        double U = countValue();
+        double U = super.countValue();
 
         if ((U + 0.27324) * (1 + X * X) > 1.27324) {
-            X = countValue() * 2 - 1;
+            X = super.countValue() * 2 - 1;
         }
 
+        System.out.println("Levy otrzymał : " + X + " i dzieli przez " + mod);
+
         // uzupelnienie rozkładu o "ramiona"
-        if (countValue() > 0.5) {
-            return X;
-        } else {
-            if (X != 0) {
-                return (1 / X);
-            } else {
-                return Double.MAX_VALUE;
-            }
-        }
+        return Math.abs((float) X);
     }
 }

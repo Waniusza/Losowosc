@@ -22,10 +22,10 @@ class Los extends JPanel implements ActionListener {
     private static long MOD = Long.MAX_VALUE;
     private Generator generator;
 
-    public Los(int a, int b, int n, int generatorNumber) {
+    public Los(long a, long b, long n, int generatorNumber) {
         switch (generatorNumber) {
             case 1: // generator pseudolosyw
-                generator = new Generator(a, b, n, MOD);
+                generator = new GeneratorPseudo(a, b, n, MOD);
                 break;
             case 2: // gausowski
                 generator = new GeneratorGausowski(a, b, n, MOD);
@@ -64,19 +64,19 @@ class Los extends JPanel implements ActionListener {
         int h = getHeight();
 
         for (int i = 0; i < 250; i++) {
-            long[] coordinates = generator.getCoordinates();
+            float[] coordinates = generator.getCoordinates();
 
-            double x = (float) coordinates[0] / MOD;
-            double y = (float) coordinates[1] / MOD;
+            int x = (int) (coordinates[0] * w);
+            int y = (int) (coordinates[1] * h);
 
-            statsX[(int) (x * 10)]++;
-            statsY[(int) (y * 10)]++;
+            statsX[((int) (x * 10) / w)]++;
+            statsY[((int) (y * 10) / h)]++;
             System.out.println("Wygenerowalem punkt : (" + x + " | " + y + ")");
             /*
              * wypełnienie punktu (x|y) kolorem
              */
-            int XX = (int) Math.abs(x * 250);
-            int YY = (int) Math.abs(y * 250);
+            int XX = x;
+            int YY = y;
             g2d.drawLine(XX, YY, XX, YY);
         }
 

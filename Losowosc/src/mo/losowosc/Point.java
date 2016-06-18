@@ -12,9 +12,9 @@ import javax.swing.Timer;
 
 public class Point extends JFrame {
     
-    private int a,b,n;
+    private long a,b,n;
     
-    public Point(int a, int b, int n, int genNum) {
+    public Point(long a, long b, long n, int genNum) {
         this.a = a;
         this.b = b;
         this.n = n;

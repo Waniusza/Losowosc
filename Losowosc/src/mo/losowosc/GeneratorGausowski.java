@@ -6,8 +6,9 @@ public class GeneratorGausowski extends Generator {
         super(a, b, n, mod);
     }
 
-
-    protected double countGauseValue() {
+    @Override
+    public long countValue() {
+        
         boolean ok = false;
         double limit = Math.sqrt(2/2.718281828);
         double X;
@@ -34,6 +35,7 @@ public class GeneratorGausowski extends Generator {
             }
         } while (!ok);
 
-        return X;
+        return (long) (X % Long.MAX_VALUE);
+        
     }
 }

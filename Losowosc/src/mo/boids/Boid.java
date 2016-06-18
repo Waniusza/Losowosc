@@ -18,8 +18,8 @@ public class Boid {
 	/**
 	 * The boid location (fields are modified the the object is never reallocated hence final)
 	 */
-	final Point2D.Double location = new Point2D.Double(100 * Math.random(),
-			100 * Math.random());
+	final Point2D.Double location = new Point2D.Double(200 * Math.random(),
+			200 * Math.random());
 
 	/**
 	 * The boid flight vector

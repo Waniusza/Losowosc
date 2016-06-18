@@ -14,16 +14,16 @@ public class Point extends JFrame {
     
     private int a,b,n;
     
-    public Point(int a, int b, int n) {
+    public Point(int a, int b, int n, int genNum) {
         this.a = a;
         this.b = b;
         this.n = n;
-        initUI();
+        initUI(genNum);
     }
 
-    private void initUI() {
+    private void initUI(int genNum) {
 
-        final Los surface = new Los(a, b, n, 1);
+        final Los surface = new Los(a, b, n, genNum);
         add(surface);
 
         addWindowListener(new WindowAdapter() {
